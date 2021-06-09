@@ -3,20 +3,28 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "3b92042ede0feddd715ce5fe16708ac0",
-"index.html": "74895af842393aff7838215d7b5feecf",
-"/": "74895af842393aff7838215d7b5feecf",
-"main.dart.js": "21e8aae0270da9377ff9c39e8308411d",
+  "version.json": "8ff61ec83915ada3300c06145ba268a5",
+"index.html": "dd9c7ce9b5baae9e21d2df210e697606",
+"/": "dd9c7ce9b5baae9e21d2df210e697606",
+"main.dart.js": "537bda2ed0d953b27b5ad4db042e3d66",
 "favicon.png": "07df1da64f43df6c885c26ac29263297",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "06ab560b42edb9bcbcd0d78c5dcf8733",
-"assets/AssetManifest.json": "b11720d661fb51fd3a7b6cb35b13a510",
-"assets/NOTICES": "29022fe86362d676b7037be3d28534e1",
+"assets/AssetManifest.json": "82447a15ac1dfc8e20de9fb5445d5698",
+"assets/NOTICES": "fcfc33c8d86041f41886ef347aeb1477",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/assets/paris.png": "b6c2d4391b4d419b00814397adae1f9b",
+"assets/assets/london.png": "2cf2fac36ba2d9b4e95b0f838e25c7eb",
+"assets/assets/australia.png": "164da9a7d61b4bbdd74ed24044e6ccae",
+"assets/assets/los_angeles.png": "99e6c7e2b9c98ef1f1bca6d0fdd30175",
 "assets/assets/wombat.png": "9148b6419519341ec0260efa590101a5",
+"assets/assets/atlanta.png": "cc6999ba8dc3a886d7173b0c9035aebb",
+"assets/assets/brianna_landon.png": "3323557b79a2c7728e03397a36476b3e",
+"assets/assets/ireland.png": "580e4ec12e4741575f9a17982bbbfcc8",
+"assets/assets/jesse_anderson.png": "00d76efcadc3c22b039e8b07290a9957",
 "favicon_old.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
@@ -35,7 +43,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
